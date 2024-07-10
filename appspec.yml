@@ -2,12 +2,18 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/python-test
-file_exists_behavior: OVERWRITE
+    destination: /home/ubuntu/python-test
+
 hooks:
   BeforeInstall:
-    - location: /install-dependencies
-      runas: root
-  AfterInstall:
-    - location: /after-install
-      runas: root
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      timeout: 300
+      runas: ubuntu
+  ApplicationStop:
+    - location: scripts/stop_server.sh
+      timeout: 300
+      runas: ubuntu
