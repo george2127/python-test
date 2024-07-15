@@ -3,14 +3,15 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/python-test
-file_exists_behavior: OVERWRITE
-
 hooks:
   BeforeInstall:
-    - location: /install_dependencies.sh
+    - location: home/ubuntu/python-test/scripts/install_dependencies.sh
       runas: root
-  AfterInstall:
-    - location: /after-install
+  ApplicationStart:
+    - location: home/ubuntu/python-test/scripts/start_server.sh
       runas: root
-      
+  ValidateService:
+    - location: home/ubuntu/python-test/scripts/validate_service.sh
+      runas: root
+
 
