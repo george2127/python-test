@@ -13,6 +13,6 @@ hooks:
       runas: root
   ValidateService:
     - location: scripts/validate_service.sh
-      runas: root
+      runas: root 
 
 
