@@ -3,6 +3,7 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/python-test
+file_exists_behavior: OVERWRITE
 hooks:
   BeforeInstall:
     - location: home/ubuntu/python-test/scripts/install_dependencies.sh
