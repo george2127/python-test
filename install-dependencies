@@ -4,7 +4,7 @@ sudo systemctl stop myapp.service
 
 
 # Update the package list
-sudo apt-get update
+sudo apt-get update 
 
 # Install system dependencies
 sudo apt-get install -y python3 python3-pip
