@@ -2,16 +2,3 @@
 
 sudo systemctl stop myapp.service
 
-
-# Update the package list
-sudo apt-get update 
-
-# Install system dependencies
-sudo apt-get install -y python3 python3-pip
-
-# Example mapping of Python packages to system packages
-sudo apt-get install -y python3-numpy python3-scipy python3-matplotlib
-
-# If some packages do not have direct apt equivalents, you may still need to use pip
-pip3 install -r requirements.txt
-
