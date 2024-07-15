@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo systemctl stop python-test.service
-python3 -m venv path/to/your/venv
+python3 -m venv home/ubuntu/python-test/venv
 source venv/bin/activate
 sudo apt install -y python3-pip
 pip3 install -r /home/ubuntu/python-test/requirements.txt
