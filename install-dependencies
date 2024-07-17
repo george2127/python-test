@@ -1,4 +1,3 @@
 #!/bin/bash
 sudo systemctl stop myapp.service
-sudo systemctl stop python-test.service
 
