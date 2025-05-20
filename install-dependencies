@@ -1,3 +1,5 @@
 #!/bin/bash
-sudo systemctl stop myapp.service
+if systemctl list-units --full -all | grep -q "myapp.service"; then
+    sudo systemctl stop myapp.service
+fi
 
