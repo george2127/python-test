@@ -1,4 +1,14 @@
 #!/bin/bash
-sudo systemctl stop myapp.service
 
+# Go to app directory
+cd /home/ubuntu/python-test
 
+# Stop service if it's running
+sudo systemctl stop myapp.service || true
+
+# Make sure venv exists
+python3 -m venv venv
+
+# Activate venv and install packages
+source venv/bin/activate
+pip install --break-system-packages -r requirements.txt
