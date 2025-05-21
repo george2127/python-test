@@ -8,9 +8,9 @@ files:
 
 hooks:
   BeforeInstall:
-    - location: scripts/install-dependencies
+    - location: install-dependencies
       runas: root
   AfterInstall:
-    - location: scripts/after-install
+    - location: after-install
       runas: root
 
