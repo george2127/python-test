@@ -22,7 +22,7 @@ jobs:
           zip -r ../deployment.zip .
 
       - name: Upload deployment artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: lambda-package
           path: deployment.zip
