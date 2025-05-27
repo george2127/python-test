@@ -1,0 +1,27 @@
+name: Build Lambda Deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt -t package/
+          cp app.py package/
+
+      - name: Zip Lambda package
+        run: |
+          cd package
+          zip -r ../deployment.zip .
+
+      - name: Upload deployment artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: lambda-package
+          path: deployment.zip
